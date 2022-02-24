@@ -14,6 +14,8 @@ class Animal {
   }
 }
 
+const animal = new Animal(false, false)
+
 class Cat extends Animal {
   constructor(herbivore, sleeping, fur, furColor, tailLength, numberOfPaws, abilityToSwim){
       super(false, false)
@@ -30,7 +32,9 @@ class Cat extends Animal {
   swim () {
     if (this.abilityToSwim = true) {
       console.log('Плывет');
-    } 
+    } else {
+      console.log('Боится');
+    }
   }
 
   climb () {
@@ -38,6 +42,8 @@ class Cat extends Animal {
   }
 
 }
+
+const cat = new Cat(false, false, true, 'red', 10, 4, true)
 
 class HomeCat extends Cat {
   constructor (herbivore, sleeping, fur, furColor, tailLength, numberOfPaws, abilityToSwim, diet = [], name){
@@ -51,6 +57,8 @@ class HomeCat extends Cat {
   }
 }
 
+const homeCat = new HomeCat(false, false, false, false, 20, 4, false, ['meet', 'milk'], 'Sem')
+
 class WildCat extends Cat {
   constructor(herbivore, sleeping, fur, furColor, tailLength, numberOfPaws, abilityToSwim){
     super(false, false, true, furColor, tailLength, numberOfPaws, true);
@@ -61,6 +69,8 @@ class WildCat extends Cat {
   }
   
 }
+
+const wildCat = new WildCat(false, false, true, 'black', 13, 4, true)
 
 class CircusCat extends HomeCat {
   constructor (herbivore, sleeping, fur, furColor, tailLength, numberOfPaws, abilityToSwim, diet = [], name, trainerName){
