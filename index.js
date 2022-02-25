@@ -9,7 +9,7 @@ class Animal {
     console.log('Спит');
   }
 
-  Eat () {
+  eat () {
     console.log('Eст');
   }
 }
@@ -17,7 +17,7 @@ class Animal {
 const animal = new Animal(false, false)
 
 class Cat extends Animal {
-  constructor(herbivore, sleeping, fur, furColor, tailLength, numberOfPaws, abilityToSwim){
+  constructor(fur, furColor, tailLength, numberOfPaws, abilityToSwim){
       super(false, false)
     this.fur = fur;
     this.furColor = furColor;
@@ -43,11 +43,11 @@ class Cat extends Animal {
 
 }
 
-const cat = new Cat(false, false, true, 'red', 10, 4, true)
+const cat = new Cat(true, 'red', 10, 4, true)
 
 class HomeCat extends Cat {
-  constructor (herbivore, sleeping, fur, furColor, tailLength, numberOfPaws, abilityToSwim, diet = [], name){
-    super(false, false, fur, furColor, tailLength, numberOfPaws, abilityToSwim);
+  constructor (fur, furColor, tailLength, numberOfPaws, abilityToSwim, diet = [], name){
+    super(fur, furColor, tailLength, numberOfPaws, abilityToSwim);
     this.diet = diet;
     this.name = name;
   }
@@ -57,11 +57,11 @@ class HomeCat extends Cat {
   }
 }
 
-const homeCat = new HomeCat(false, false, false, false, 20, 4, false, ['meet', 'milk'], 'Sem')
+const homeCat = new HomeCat(false, false, 20, 4, false, ['meet', 'milk'], 'Sem')
 
 class WildCat extends Cat {
-  constructor(herbivore, sleeping, fur, furColor, tailLength, numberOfPaws, abilityToSwim){
-    super(false, false, true, furColor, tailLength, numberOfPaws, true);
+  constructor(fur, furColor, tailLength, numberOfPaws, abilityToSwim){
+    super(true, furColor, tailLength, numberOfPaws, true);
   }
   
   speak(){
@@ -70,11 +70,11 @@ class WildCat extends Cat {
   
 }
 
-const wildCat = new WildCat(false, false, true, 'black', 13, 4, true)
+const wildCat = new WildCat(true, 'black', 13, 4, true)
 
 class CircusCat extends HomeCat {
-  constructor (herbivore, sleeping, fur, furColor, tailLength, numberOfPaws, abilityToSwim, diet = [], name, trainerName){
-    super(false, false, fur, furColor, tailLength, numberOfPaws, abilityToSwim, diet, name)
+  constructor (fur, furColor, tailLength, numberOfPaws, abilityToSwim, diet = [], name, trainerName){
+    super(fur, furColor, tailLength, numberOfPaws, abilityToSwim, diet, name)
     this.trainerName = trainerName; 
   }
   
@@ -83,4 +83,4 @@ class CircusCat extends HomeCat {
   }
 }
 
-const circusCat = new CircusCat(false, false, true, 'white', 15, 4, true, ['meet', 'milk'], 'Bob', 'John')
+const circusCat = new CircusCat(true, 'white', 15, 4, true, ['meet', 'milk'], 'Bob', 'John')
